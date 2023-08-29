@@ -1,4 +1,5 @@
-import proxyData from './proxy'
+import proxyData from './proxy';
+import observe from './observe';
 
 /**
  * 初始化状态
@@ -24,11 +25,13 @@ function initData(vm) {
   // 如果是个函数 ? 执行 : 返回源数据或者是空对象
   data = vm._data = typeof data === 'function' ? data.call(vm) : data || {};
 
-  // 遍历去代理对象
   for (var key in data) {
     // 代理对象
     proxyData(vm, '_data', key);
   }
+
+  // 数据观测
+  observe(vm._data);
 
 }
 
