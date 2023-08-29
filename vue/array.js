@@ -2,12 +2,12 @@ import { ARRAY_METHODS } from './config'
 import observeArr from './observeArr'
 
 var originArrMethods = Array.prototype, // array内置API
-  arrayMethods = Object.create(originArrMethods) // 创建继承内置API对象
+  arrayMethods = Object.create(originArrMethods) // 创建继承内置API新对象
 
 ARRAY_METHODS.map(function (m) {
   arrayMethods[m] = function () {
     var args = Array.prototype.slice.call(arguments), // 伪数组转换为数组
-      rt = originArrMethods[m].apply(this, args);
+      rt = originArrMethods[m].apply(this, args); // 执行原数组方法
 
     console.log('数组新方法', args);
     
@@ -25,7 +25,7 @@ ARRAY_METHODS.map(function (m) {
         break;
     }
 
-    // 有新参数交给观测
+    // 如果splice有新参数交给观测
     newArr && observeArr(newArr);
     return rt;
   }

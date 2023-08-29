@@ -23,7 +23,7 @@ function initData(vm) {
   var data = vm.$options.data;
 
   // 如果是个函数 ? 执行 : 返回源数据或者是空对象
-  data = vm._data = typeof data === 'function' ? data.call(vm) : data || {};
+  vm._data = data = typeof data === 'function' ? data.call(vm) : data || {};
 
   for (var key in data) {
     // 代理对象

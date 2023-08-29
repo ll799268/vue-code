@@ -11,6 +11,7 @@ function Observer (data) {
   // 如果是数组
   if (Array.isArray(data)) {
     data.__proto__ = arrayMethods;
+    // 防止多维数组
     observeArr(data);
   } else {
     this.walk(data)
@@ -28,7 +29,7 @@ Observer.prototype.walk = function (data) {
     var key = keys[i],
       value = data[key];
     
-    // 响应式数据转换
+    // 响应式数据拦截
     defineReactiveData(data, key, value);
   }
 };

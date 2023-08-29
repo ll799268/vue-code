@@ -1,5 +1,5 @@
 
-// 重新数组的新方法
+// 更改原数组的方法
 const ARRAY_METHODS = [
   'push',
   'pop',

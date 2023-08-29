@@ -1,7 +1,7 @@
 import observe from './observe';
 
 /**
- * 数据响应式
+ * 数据响应式拦截
  * @param {Object} data 源对象
  * @param {String} key 键
  * @param {Object | String} value 值
