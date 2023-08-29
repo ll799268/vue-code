@@ -17,6 +17,8 @@ function defineReactiveData(data, key, value) {
     set(newValue) {
       console.log('数据响应式获设置', newValue);
       if (newValue === value) return;
+      // 如果把基本数据类型改为引用类型，需重新观测
+      observe(newValue);
       value = newValue;
     }
   })

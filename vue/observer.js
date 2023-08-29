@@ -1,5 +1,8 @@
 import defineReactiveData from './reactive';
 
+import arrayMethods from './array';
+import observeArr from './observeArr';
+
 /**
  * 观察者实例
  * @param {Object} data 
@@ -7,7 +10,8 @@ import defineReactiveData from './reactive';
 function Observer (data) {
   // 如果是数组
   if (Array.isArray(data)) {
-
+    data.__proto__ = arrayMethods;
+    observeArr(data);
   } else {
     this.walk(data)
   }

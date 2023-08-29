@@ -10,6 +10,7 @@ let vm = new Vue({
           b: 1
         }
       },
+      teacher: ['张三', '李四'],
       students: [
         {
           id: 0,
@@ -24,4 +25,7 @@ let vm = new Vue({
   }
 });
 
-console.log(vm.info.a.b);
+console.log(vm.students.splice(0, 1, {
+  id: 3,
+  name: "小白"
+}));
