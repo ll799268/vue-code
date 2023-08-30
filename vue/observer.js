@@ -1,7 +1,7 @@
 import defineReactiveData from './reactive';
 
 import arrayMethods from './array';
-import observeArr from './observeArr';
+import observeArr from './observe-arr';
 
 /**
  * 观察者实例

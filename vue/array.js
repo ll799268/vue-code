@@ -1,5 +1,5 @@
 import { ARRAY_METHODS } from './config'
-import observeArr from './observeArr'
+import observeArr from './observe-arr'
 
 var originArrMethods = Array.prototype, // array内置API
   arrayMethods = Object.create(originArrMethods) // 创建继承内置API新对象
