@@ -4,7 +4,8 @@ const HTMLWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'development',
-  entry: './src/proxy.js',
+  // entry: './src/proxy.js',
+  entry: './src/virtual-dom.js',
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist')
