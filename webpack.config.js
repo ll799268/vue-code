@@ -23,5 +23,8 @@ module.exports = {
     new HTMLWebpackPlugin({
       template: path.resolve(__dirname, 'public/index.html')
     })
-  ]
+  ],
+  devServer: {
+    open: true
+  }
 }

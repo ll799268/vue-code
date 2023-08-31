@@ -1,4 +1,4 @@
-import Vue from 'vue';
+import Vue from 'vue/proxy';
 
 let vm = new Vue({
   el: '#app',
