@@ -3,13 +3,13 @@
  * 节点类
  * @param {String} type 类型
  * @param {Object} props 属性
- * @param {Array} clidren 自己节点
+ * @param {Array} children 自己节点
  */
 class Element {
-  constructor(type, props, clidren) {
+  constructor(type, props, children) {
     this.type = type;
     this.props = props;
-    this.clidren = clidren;
+    this.children = children;
   }
 }
 
