@@ -17,14 +17,14 @@ function createElement(type, props, clidren) {
  * @returns 真实DOM节点
  */
 function render(vDom) {
-  const { type, props, clidren } = vDom,
+  const { type, props, children } = vDom,
     el = document.createElement(type)
 
   for (const key in props) {
     setAttrs(el, key, props[key]);
   }
 
-  clidren.map(c => {
+  children.map(c => {
     // 子类是不是非文本节点 ？渲染 ：创建文本节点
     c = c instanceof Element
       ?
