@@ -24,33 +24,33 @@ function domDiff(oldVDom, newVDom) {
 /**
  * 节点比较
  * @param {Object} oldNode 旧节点
- * @param {Object} newDode 新节点
+ * @param {Object} newNode 新节点
  * @param {Number} index patch序号
  */
-function vNodeWalk(oldNode, newDode, index) {
+function vNodeWalk(oldNode, newNode, index) {
   // 节点补丁
   let vnPatch = []
 
   // 删除旧节点
-  if (!newDode) {
+  if (!newNode) {
     vnPatch.push({
       type: REMOVE,
       index
     })
   }
   // 文本内容替换
-  else if (typeof oldNode === 'string' && typeof newDode === 'string') {
-    if (oldNode !== newDode) {
+  else if (typeof oldNode === 'string' && typeof newNode === 'string') {
+    if (oldNode !== newNode) {
       vnPatch.push({
         type: TEXT,
-        text: newDode
+        text: newNode
       })
     }
   }
   // 节点类型相同
-  else if (oldNode.type === newDode.type) {
+  else if (oldNode.type === newNode.type) {
     // 比较属性
-    const attrPatch = attrsWalk(oldNode.props, newDode.props)
+    const attrPatch = attrsWalk(oldNode.props, newNode.props)
 
     // 如果属性修改了
     if(Object.keys(attrPatch).length) {
@@ -61,13 +61,13 @@ function vNodeWalk(oldNode, newDode, index) {
     }
 
     // 比较子节点
-    childrenWalk(oldNode.children, newDode.children)
+    childrenWalk(oldNode.children, newNode.children)
   }
   // 替换节点
   else {
     vnPatch.push({
       type: REPLACE,
-      newDode
+      newNode
     })
   }
 

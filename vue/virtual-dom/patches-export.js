@@ -31,7 +31,7 @@ const patches = {
   7: [
     {
       "type": "REPLACE",
-      "newDode": {
+      "newNode": {
         "type": "div",
         "props": {
           "class": "item",

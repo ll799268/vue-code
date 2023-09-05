@@ -4,11 +4,11 @@ import Element from './element'
  * 创建节点
  * @param {String} type 类型
  * @param {Object} props 节点信息
- * @param {Array} clidren 子项
+ * @param {Array} children 子项
  * @returns 节点对象
  */
-function createElement(type, props, clidren) {
-  return new Element(type, props, clidren);
+function createElement(type, props, children) {
+  return new Element(type, props, children);
 }
 
 /**
