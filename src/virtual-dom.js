@@ -1,5 +1,6 @@
 import { createElement, render, renderDom } from 'vue/virtual-dom'
 import domDiff from 'vue/virtual-dom/dom-diff'
+import doPatch from 'vue/virtual-dom/do-patch'
 
 const vDom1 = createElement('ul', {
   class: 'list',
@@ -22,9 +23,9 @@ const vDom1 = createElement('ul', {
     createElement('p', { 
       class: 'text' 
     }, [
-      createElement('span', 
-        { class: 'title' }
-        , ['第二个列表项'])
+      createElement('span', { 
+        class: 'title' 
+      }, [])
     ])
   ]),
   createElement('li', {
@@ -73,4 +74,4 @@ renderDom(
 
 const patches = domDiff(vDom1, vDom2)
 
-console.log(patches);
+doPatch(rDom, patches)
