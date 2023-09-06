@@ -11,11 +11,11 @@ function defineReactiveData(data, key, value) {
   observe(value);
   Object.defineProperty(data, key, {
     get() {
-      console.log('数据响应式获取', value);
+      // console.log('数据响应式获取', value);
       return value;
     },
     set(newValue) {
-      console.log('数据响应式获设置', newValue);
+      // console.log('数据响应式获设置', newValue);
       if (newValue === value) return;
       // 如果把基本数据类型改为引用类型，需重新观测
       observe(newValue);

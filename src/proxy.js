@@ -24,8 +24,3 @@ let vm = new Vue({
     }
   }
 });
-
-console.log(vm.students.splice(0, 1, {
-  id: 3,
-  name: "小白"
-}));

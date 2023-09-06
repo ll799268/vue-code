@@ -9,7 +9,7 @@ ARRAY_METHODS.map(function (m) {
     var args = Array.prototype.slice.call(arguments), // 伪数组转换为数组
       rt = originArrMethods[m].apply(this, args); // 执行原数组方法
 
-    console.log('数组新方法', args);
+    // console.log('数组新方法', args);
     
     var newArr;
 
